@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CategoryCard from '@/components/CategoryCard';
 
 const categories = [
-  { name: 'Lamps', priceRange: '$1,099 - $6,099', image: '/images/category-lamps.jpg' },
+  { name: 'Grand Pianos', priceRange: '$1,099 - $6,099', image: '/images/category-lamps.jpg' },
   { name: 'Office', priceRange: '$3,099 - $6,099', image: '/images/category-office.jpg' },
   { name: 'Living Room', priceRange: '$2,099 - $5,099', image: '/images/category-living.jpg' },
   { name: 'Dining', priceRange: '$1,099 - $3,099', image: '/images/category-dining.jpg' },

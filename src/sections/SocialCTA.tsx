@@ -23,7 +23,7 @@ export default function SocialCTA() {
         className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4"
       >
         <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">
-          Follow @pre-lovedpianos
+          Follow @affordable-pianos
         </h2>
         
         <a

@@ -17,6 +17,12 @@ const products = [
   },
   {
     name: 'Grand Piano',
+    price: '$299',
+    image: '/images/product-grand-piano3.png',
+    stock: 10,
+  },
+  {
+    name: 'Grand Piano',
     price: '$99',
     image: '/images/product-grand-piano4.png',
     stock: 10,

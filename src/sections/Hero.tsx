@@ -100,7 +100,7 @@ export default function Hero() {
         >
           <motion.div variants={fadeInUp} className="mb-3">
             <span className="inline-block px-3 py-1.5 bg-white/90 text-[#1A1A1A] text-xs font-medium tracking-wide rounded">
-              Quality Used Pianos in Sydney
+              Quality Second-Hand Pianos in Sydney
             </span>
           </motion.div>
           <motion.h2

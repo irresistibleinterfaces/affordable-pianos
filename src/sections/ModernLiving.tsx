@@ -14,18 +14,28 @@ export default function ModernLiving() {
             viewport={{ once: true, margin: '-100px' }}
           >
             <p className="text-[#666666] text-base sm:text-lg leading-relaxed mb-8">
-              Elevate your space with beautifully crafted grand pianos that blend
-              timeless elegance with refined performance. Each instrument is selected
-              for its rich tone, flawless finish, and lasting quality—designed to be
-              played, admired, and passed down for generations.
+              Elevate your space with beautifully crafted pianos that blend
+              timeless elegance with refined performance. Discover a curated range of
+              pre-loved upright and grand pianos - without the premium price tag. 
+              At Affordable Pianos, we specialise in sourcing high-quality used pianos
+              across Sydney, giving each instrument a second life with a new owner.
+              Whether you're a beginner, a seasoned player, or buying for your family,
+              our collection offers affordable pianos without compromising on sound or
+              craftsmanship.
+              Every piano we list has been carefully selected for its playability,
+              condition, and overall value and is covered
+              by our after sale guarantee — so you can buy with confidence.
             </p>
             
             <div className="mb-8">
               <h3 className="text-[#1A1A1A] text-xl sm:text-2xl font-semibold mb-2">
-                Grand Pianos
+                New Stock Arriving Soon
               </h3>
               <p className="text-[#666666] text-sm sm:text-base">
-                Sculptural forms, polished surfaces, and concert-level presence.
+                We’re currently preparing a curated selection of quality pre-loved pianos.
+                Our full inventory will be available shortly — in the meantime, feel free
+                to browse example models below or get in touch for early access to upcoming
+                arrivals.
               </p>
             </div>
 
@@ -33,7 +43,7 @@ export default function ModernLiving() {
               href="#shop"
               className="inline-flex items-center gap-2 text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
             >
-              <span>Shop Deals</span>
+              <span>Browse Piano Types</span>
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
