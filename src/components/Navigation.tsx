@@ -4,11 +4,11 @@ import { Search, ShoppingBag, Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
-  { name: 'HOME', href: '#' },
-  { name: 'SHOP', href: '#shop' },
-  { name: 'ABOUT', href: '#about' },
-  { name: 'BLOG', href: '#blog' },
-  { name: 'CONTACT', href: '#contact' },
+  { name: 'HOME', href: '/' },
+  { name: 'SHOP', href: '/#shop' },
+  { name: 'ABOUT', href: '/about' },
+  { name: 'BLOG', href: '/#blog' },
+  { name: 'CONTACT', href: '/#contact' },
 ];
 
 export default function Navigation() {
