@@ -127,7 +127,7 @@ export default function Hero() {
   }}
   className="inline-block px-8 py-4 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#1A1A1A] hover:text-white transition-colors duration-300"
 >
-  FIND YOUR PIANO
+  BROWSE PIANOS
 </a>
           </motion.div>
         </motion.div>

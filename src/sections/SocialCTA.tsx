@@ -28,7 +28,7 @@ export default function SocialCTA() {
         className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4"
       >
         <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6">
-          Follow @affordable-pianos
+          Follow @affordablepianos
         </h2>
         
 <a
@@ -40,7 +40,7 @@ export default function SocialCTA() {
 
           className="inline-block px-8 py-3 border border-white text-white text-sm font-medium tracking-wide hover:bg-white hover:text-[#1A1A1A] transition-colors duration-300"
         >
-          Shop Deals
+          BROWSE PIANOS
         </a>
       </motion.div>
     </section>

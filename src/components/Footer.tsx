@@ -62,7 +62,7 @@ export default function Footer() {
   </div>
 
   <p className="text-[#999999] text-sm sm:text-base leading-relaxed max-w-md">
-    Previously loved and restored pianos, ready for their next performance.
+    Quality second-hand pianos in Sydney. Book a private viewing today.
   </p>
 </div>
 

@@ -147,7 +147,7 @@ export default function ComingSoonProducts() {
             data-piano="cta"
             className="pressable inline-block px-8 py-4 bg-[#1A1A1A] text-white text-sm font-medium tracking-wide"
           >
-            GET NOTIFIED
+            CONTACT US
           </a>
         </motion.div>
       </div>
