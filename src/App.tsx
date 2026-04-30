@@ -1,8 +1,13 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import Navigation from '@/components/Navigation';
 import MarqueeBanner from '@/components/MarqueeBanner';
 import Footer from '@/components/Footer';
 import AboutPage from '@/pages/AboutPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import Returns from './pages/Returns';
+import Shipping from './pages/Shipping';
 
 import Hero from '@/sections/Hero';
 import Categories from '@/sections/Categories';
@@ -31,16 +36,9 @@ function HomePage() {
         <MarqueeBanner />
         <ModernLiving />
         <ComingSoonProducts />
-        <AboutUs />
-        <WhyFromUs />
         <WhyChooseUsV2 />
-        <Brands />
         <Testimonials />
-        <BlogSection />
         <SocialCTA />
-        <TransformCTA />
-        <Membership />
-        <Newsletter />
         <ContactForm />
       </main>
       <Footer />
@@ -51,9 +49,15 @@ function HomePage() {
 function App() {
   return (
     <HashRouter>
+
+        <Toaster position="top-right" />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+<Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/terms" element={<Terms />} />
+<Route path="/returns" element={<Returns />} />
+<Route path="/shipping" element={<Shipping />} />
       </Routes>
     </HashRouter>
   );

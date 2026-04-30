@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
 import { heroBackground, heroTitle, fadeInUp, staggerContainerSlow, drawLine } from '@/lib/animations';
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
+
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section id="top" className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <motion.div
         variants={heroBackground}
@@ -100,22 +105,30 @@ export default function Hero() {
         >
           <motion.div variants={fadeInUp} className="mb-3">
             <span className="inline-block px-3 py-1.5 bg-white/90 text-[#1A1A1A] text-xs font-medium tracking-wide rounded">
-              Quality Second-Hand Pianos in Sydney
+              Sydney-Based Piano Warehouse
             </span>
           </motion.div>
           <motion.h2
             variants={fadeInUp}
             className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white mb-4"
           >
-            Previously loved and restored pianos, ready for their next performance.
+            Quality second-hand pianos in Sydney. Book a private viewing today.
           </motion.h2>
           <motion.div variants={fadeInUp}>
-            <a
-              href="#shop"
-              className="inline-block px-8 py-4 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#1A1A1A] hover:text-white transition-colors duration-300"
-            >
-              FIND YOUR PIANO
-            </a>
+<a
+  href="#shop"
+  onClick={(e) => {
+    e.preventDefault();
+
+    const el = document.getElementById('shop');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+  className="inline-block px-8 py-4 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#1A1A1A] hover:text-white transition-colors duration-300"
+>
+  FIND YOUR PIANO
+</a>
           </motion.div>
         </motion.div>
       </div>

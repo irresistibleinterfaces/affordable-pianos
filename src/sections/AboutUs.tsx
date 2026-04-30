@@ -51,14 +51,18 @@ export default function AboutUs() {
             Our Story
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-[#1A1A1A] tracking-tight mt-4 leading-[1.1]">
-            We believe the space around you shapes the life within you.
+            Affordable Used Pianos in Sydney – Quality Instruments, Exceptional Value
           </h2>
           <p className="text-[#666666] text-base sm:text-lg mt-6 sm:mt-8 leading-relaxed">
-            Furnexa was founded on a simple conviction: that everyone deserves to live and work
-            in spaces that inspire. What began as a small curation of hand-picked Scandinavian
-            pieces has grown into a destination for design-conscious individuals who refuse to
-            compromise on quality, sustainability, or service.
-          </p>
+            Affordable Pianos was built to make it easier for people across Sydney to find
+            high-quality used pianos at genuinely affordable prices — without the guesswork
+            that usually comes with buying second-hand.
+            What started as a small, carefully selected range of used upright and grand pianos
+            in Sydney has grown into a trusted source for musicians, families, and first-time
+            buyers looking for reliable instruments that deliver both performance and value.
+            We don’t list bulk inventory or unknown-quality stock — only instruments we’d
+            confidently stand behind.
+        </p>
         </motion.div>
 
         {/* === ROW 2: Stats Bar === */}
@@ -102,19 +106,22 @@ export default function AboutUs() {
             </h3>
             <div className="space-y-4 text-[#666666] text-sm sm:text-base leading-relaxed">
               <p>
-                In 2010, our founder spent six months searching for a single sofa that met three
-                criteria: honest materials, timeless design, and a fair price. The search revealed
-                a gap in the market — and a mission.
+                Affordable Pianos began with a simple frustration — too many second-hand pianos on
+                the market are poorly maintained, overpriced, or impossible to properly assess
+                online. That gap is exactly why we started — to offer a more reliable way to buy
+                affordable upright and grand pianos without the risk.
               </p>
               <p>
-                Today, Furnexa works directly with workshops and independent designers in
-                Denmark, Italy, Japan, and the United States. We cut out middlemen so our customers
-                receive museum-quality craftsmanship at accessible prices.
+                We focus on well-built instruments from
+                trusted brands, ensuring every piano we list offers genuine value — not just a
+                cheap price tag.
               </p>
               <p>
-                Every piece tells a story. We know the names of the people who built your table.
-                We know the forest your oak came from. And we know that when you love where you
-                live, everything else improves.
+                We don’t operate like a typical online marketplace. There are no middlemen, no
+                inflated markups, and no guesswork. Just a straightforward process where you can:
+                browse available pianos online, speak directly with someone who knows the
+                instrument, and visit our Sydney warehouse to inspect and play before you buy.
+                
               </p>
             </div>
           </motion.div>
@@ -165,22 +172,22 @@ export default function AboutUs() {
           className="text-center bg-[#1A1A1A] py-16 sm:py-20 px-6 sm:px-8"
         >
           <h3 className="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-4">
-            Ready to transform your space?
+            Have something specific in mind?
           </h3>
           <p className="text-white/60 text-base sm:text-lg max-w-xl mx-auto mb-8">
-            Book a complimentary design consultation with one of our experts. No obligation,
-            just honest guidance.
+            Our inventory changes frequently, so if you don’t see what you’re looking for, reach out —
+            we may have something incoming.
           </p>
           <a
             href="#contact"
             data-piano="cta"
             className="pressable inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1A1A1A] text-sm font-medium tracking-wide hover:bg-[#F5F5F5] transition-colors duration-200"
           >
-            <span>BOOK A CONSULTATION</span>
+            <span>CONTACT US</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <p className="text-white/40 text-xs mt-4">
-            Free 30-minute session • Online or in-showroom
+            Typically replies within the hour • No obligation, just honest advice
           </p>
         </motion.div>
       </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -17,15 +18,27 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 3000);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
+  try {
+    const res = await fetch('https://formspree.io/f/xvzlplwq', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      toast.success('Message sent successfully!');
+
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      toast.error('Something went wrong 😬');
+    }
+  } catch (err) {
+    toast.error('Failed to send. Try again.');
+  }
+};
   return (
     <section id="contact" className="py-20 sm:py-28 lg:py-32 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
@@ -44,8 +57,8 @@ export default function ContactForm() {
             Contact Us
           </h2>
           <p className="text-[#666666] text-base sm:text-lg mt-4 max-w-xl mx-auto">
-            Whether you have a question about a piece, need design advice, or want to
-            discuss a custom order — we are here to help.
+            Whether you have a question about a piece, have a general enquiry, or 
+            for early access to upcoming arrivals - we are here to help.
           </p>
         </motion.div>
 
@@ -63,8 +76,8 @@ export default function ContactForm() {
                 Reach Out Directly
               </h3>
               <p className="text-[#666666] text-sm leading-relaxed mb-8">
-                Our team typically responds within 24 hours. For urgent enquiries
-                about existing orders, please include your order number.
+                Our team typically responds within 24 hours. For urgent enquiries,
+                please call or text us on the phone number below.
               </p>
             </div>
 
@@ -78,10 +91,10 @@ export default function ContactForm() {
                     Email
                   </span>
                   <a
-                    href="mailto:support@furnexa.com"
+                    href="mailto:affordablepianos@purelymail.com"
                     className="text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
                   >
-                    support@furnexa.com
+                    affordablepianos@purelymail.com
                   </a>
                 </div>
               </div>
@@ -95,10 +108,10 @@ export default function ContactForm() {
                     Phone
                   </span>
                   <a
-                    href="tel:+18004528392"
+                    href="tel:+61484128805"
                     className="text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
                   >
-                    +1 (800) 452-8392
+                    (+61) 484 128 805
                   </a>
                 </div>
               </div>
@@ -109,12 +122,12 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <span className="text-[#999999] text-xs uppercase tracking-wider block mb-1">
-                    Showroom
+                    Warehouse
                   </span>
                   <p className="text-[#1A1A1A] font-medium">
-                    214 Westwood Avenue
+                    Sydney, Australia
                     <br />
-                    California, USA
+                    
                   </p>
                 </div>
               </div>
@@ -213,8 +226,8 @@ export default function ContactForm() {
                   <option value="general">General Enquiry</option>
                   <option value="product">Product Question</option>
                   <option value="design">Design Consultation</option>
-                  <option value="order">Order Status</option>
-                  <option value="custom">Custom Order</option>
+                  <option value="order">Book a Private Viewing</option>
+                  <option value="custom">Other</option>
                 </select>
               </div>
 

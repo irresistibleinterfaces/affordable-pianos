@@ -14,27 +14,25 @@ const sampleProducts = [
     name: 'Baby Grand Piano',
     category: 'Grand Pianos',
     priceRange: '$2,999 – $7,999',
-    image: '/images/category-baby-grand.jpg',
+    image: '/images/category-baby-grand.png',
   },
   {
     id: 3,
     name: 'Compact Upright Piano',
     category: 'Upright Pianos',
     priceRange: '$499 – $1,199',
-    image: '/images/category-compact-upright.jpg',
-  },
-  {
-    id: 4,
-    name: 'Grand Piano',
-    category: 'Grand Pianos',
-    priceRange: '$499 – $1,199',
-    image: '/images/category-grand.jpg',
+    image: '/images/category-compact-upright.png',
   },
 ];
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
+
 export default function ComingSoonProducts() {
   return (
-    <section className="py-20 sm:py-28 lg:py-32 bg-white">
+    <section id="shop" className="py-20 sm:py-28 lg:py-32 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Coming Soon Banner */}
         <motion.div
@@ -139,8 +137,13 @@ export default function ComingSoonProducts() {
           <p className="text-[#999999] text-sm mb-4">
             Want to know when the full collection drops?
           </p>
-          <a
-            href="#contact"
+<a
+  href="#contact"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollTo('contact');
+  }}
+
             data-piano="cta"
             className="pressable inline-block px-8 py-4 bg-[#1A1A1A] text-white text-sm font-medium tracking-wide"
           >

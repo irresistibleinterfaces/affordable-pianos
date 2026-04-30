@@ -5,10 +5,10 @@ const linkColumns = [
   {
     title: 'Links',
     links: [
-      { name: 'Home', href: '#' },
+      { name: 'Home', href: '#top' },
       { name: 'Shop', href: '#shop' },
       { name: 'About Us', href: '#about' },
-      { name: 'Blog', href: '#blog' },
+      { name: 'Blog', href: '#' },
       { name: 'FAQ', href: '#' },
     ],
   },
@@ -25,14 +25,19 @@ const linkColumns = [
   {
     title: 'Support',
     links: [
-      { name: 'Shipping Information', href: '#' },
-      { name: 'Return & Refund Policy', href: '#' },
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms & Conditions', href: '#' },
+      { name: 'Shipping Information', href: '/#/shipping' },
+      { name: 'Return & Refund Policy', href: '/#/returns' },
+      { name: 'Privacy Policy', href: '/#/privacy-policy' },
+      { name: 'Terms & Conditions', href: '/#/terms' },
       { name: 'Contact', href: '#contact' },
     ],
   },
 ];
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export default function Footer() {
   return (
@@ -57,7 +62,7 @@ export default function Footer() {
   </div>
 
   <p className="text-[#999999] text-sm sm:text-base leading-relaxed max-w-md">
-    Timeless Pianos, Ready for Their Next Chapter.
+    Previously loved and restored pianos, ready for their next performance.
   </p>
 </div>
 
@@ -65,22 +70,22 @@ export default function Footer() {
           <div className="lg:text-right">
             <div className="space-y-3">
               <a
-                href="mailto:support@prelovedpianos.com"
+                href="mailto:affordablepianos@purelymail.com"
                 className="flex items-center lg:justify-end gap-2 text-[#999999] hover:text-white transition-colors duration-200"
               >
                 <Mail className="w-4 h-4" />
-                <span>support@prelovedpianos.com</span>
+                <span>affordablepianos@purelymail.com</span>
               </a>
               <a
-                href="tel:+1800123456"
+                href="tel:+61484128805"
                 className="flex items-center lg:justify-end gap-2 text-[#999999] hover:text-white transition-colors duration-200"
               >
                 <Phone className="w-4 h-4" />
-                <span>(+61) 469-696-969</span>
+                <span>(+61) 484 128 805</span>
               </a>
               <div className="flex items-center lg:justify-end gap-2 text-[#999999]">
                 <MapPin className="w-4 h-4" />
-                <span>123 Fake St, Sutherland, Russia</span>
+                <span>Sydney, NSW, Australia</span>
               </div>
             </div>
           </div>
@@ -102,12 +107,19 @@ export default function Footer() {
               <ul className="space-y-2">
                 {column.links.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-[#999999] text-sm hover:text-white transition-colors duration-200"
-                    >
-                      {link.name}
-                    </a>
+<a
+  href={link.href}
+  onClick={(e) => {
+    if (link.href.startsWith('#')) {
+      e.preventDefault();
+      const id = link.href.replace('#', '');
+      scrollTo(id);
+    }
+  }}
+  className="text-[#999999] text-sm hover:text-white transition-colors duration-200"
+>
+  {link.name}
+</a>
                   </li>
                 ))}
               </ul>

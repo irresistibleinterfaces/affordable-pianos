@@ -6,20 +6,20 @@ const testimonials = [
   {
     id: 1,
     quote: "Couldn’t be happier with our piano. It looks beautiful in our home and sounds even better. The whole process was smooth from start to finish.",
-    author: "Kylie C.",
-    avatar: "/images/testimonial-avatar.jpg",
+    author: "Sarah L. - North Shore, NSW.",
+    avatar: "/images/testimonial-avatar1.png",
   },
   {
     id: 2,
     quote: "I was a bit hesitant buying a used piano online, but the quality exceeded expectations. It arrived in perfect condition and plays like new.",
-    author: "Cameron M.",
-    avatar: "/images/testimonial-avatar.jpg",
+    author: "James P. - Randwick, NSW",
+    avatar: "/images/testimonial-avatar2.png",
   },
   {
     id: 3,
     quote: "Amazing value for money. You can tell these pianos are properly cared for — not just resold. Will definitely recommend to friends",
-    author: "Boi D.",
-    avatar: "/images/testimonial-avatar.jpg",
+    author: "Belinda M. - Mosman, NSW",
+    avatar: "/images/testimonial-avatar3.png",
   },
 ];
 

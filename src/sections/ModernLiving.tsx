@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 import { fadeInLeft, fadeInRight } from '@/lib/animations';
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
+
 export default function ModernLiving() {
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white">
@@ -14,17 +19,13 @@ export default function ModernLiving() {
             viewport={{ once: true, margin: '-100px' }}
           >
             <p className="text-[#666666] text-base sm:text-lg leading-relaxed mb-8">
-              Elevate your space with beautifully crafted pianos that blend
-              timeless elegance with refined performance. Discover a curated range of
+              Discover a curated range of
               pre-loved upright and grand pianos - without the premium price tag. 
               At Affordable Pianos, we specialise in sourcing high-quality used pianos
-              across Sydney, giving each instrument a second life with a new owner.
-              Whether you're a beginner, a seasoned player, or buying for your family,
-              our collection offers affordable pianos without compromising on sound or
-              craftsmanship.
-              Every piano we list has been carefully selected for its playability,
-              condition, and overall value and is covered
-              by our after sale guarantee — so you can buy with confidence.
+              across Sydney, giving each instrument a second life.
+              Unlike typical online marketplaces, we give you the opportunity
+              to inspect and play each piano in person at our Sydney warehouse before making
+              a decision. No surprises, no pressure — just a straightforward buying experience.
             </p>
             
             <div className="mb-8">
@@ -32,15 +33,19 @@ export default function ModernLiving() {
                 New Stock Arriving Soon
               </h3>
               <p className="text-[#666666] text-sm sm:text-base">
-                We’re currently preparing a curated selection of quality pre-loved pianos.
+                We’re currently preparing a selection of quality pre-loved pianos.
                 Our full inventory will be available shortly — in the meantime, feel free
                 to browse example models below or get in touch for early access to upcoming
                 arrivals.
               </p>
             </div>
 
-            <a
-              href="#shop"
+<a
+  href="#shop"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollTo('contact');
+  }}
               className="inline-flex items-center gap-2 text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
             >
               <span>Browse Piano Types</span>
@@ -73,7 +78,7 @@ export default function ModernLiving() {
               </h4>
               <div className="flex items-center gap-2">
                 <span className="text-[#1A1A1A] font-semibold">$5999</span>
-                <span className="text-[#999999] line-through text-sm">$6999.00</span>
+                <span className="text-[#999999] line-through text-sm">$12,999.00</span>
               </div>
             </div>
           </motion.div>

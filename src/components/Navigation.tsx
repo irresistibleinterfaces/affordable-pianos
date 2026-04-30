@@ -3,18 +3,26 @@ import { motion } from 'framer-motion';
 import { Search, ShoppingBag, Menu } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
+
+
 const navLinks = [
-  { name: 'HOME', href: '/' },
-  { name: 'SHOP', href: '/#shop' },
-  { name: 'ABOUT', href: '/about' },
-  { name: 'BLOG', href: '/#blog' },
-  { name: 'CONTACT', href: '/#contact' },
+  { name: 'HOME', href: '#top' },
+  { name: 'SHOP', href: '#shop' },
+  { name: 'ABOUT', href: '#about' },
+  { name: 'CONTACT', href: '#contact' },
 ];
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+const [searchOpen, setSearchOpen] = useState(false);
+const [query, setQuery] = useState('');
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -50,41 +58,35 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={`text-sm font-medium tracking-[0.05em] transition-all duration-200 hover:opacity-70 ${
-                  scrolled ? 'text-[#1A1A1A]' : 'text-white'
-                }`}
-              >
-                {link.name}
-              </a>
-            ))}
+           {navLinks.map((link) => (
+  <a
+    key={link.name}
+    href={link.href}
+    onClick={(e) => {
+      e.preventDefault();
+
+      const id = link.href.replace('#', '');
+      scrollTo(id);
+    }}
+    className={`text-sm font-medium tracking-[0.05em] transition-all duration-200 hover:opacity-70 ${
+      scrolled ? 'text-[#1A1A1A]' : 'text-white'
+    }`}
+  >
+    {link.name}
+  </a>
+))}
           </div>
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">
-            <button
-              className={`p-2 transition-colors duration-300 ${
-                scrolled ? 'text-[#1A1A1A]' : 'text-white'
-              }`}
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" strokeWidth={1.5} />
-            </button>
-            <button
-              className={`p-2 transition-colors duration-300 relative ${
-                scrolled ? 'text-[#1A1A1A]' : 'text-white'
-              }`}
-              aria-label="Cart"
-            >
-              <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#1A1A1A] text-white text-[10px] font-medium rounded-full flex items-center justify-center">
-                0
-              </span>
-            </button>
-
+<button
+  onClick={() => setSearchOpen(!searchOpen)}
+  className={`p-2 transition-colors duration-300 ${
+    scrolled ? 'text-[#1A1A1A]' : 'text-white'
+  }`}
+>
+  <Search className="w-5 h-5" strokeWidth={1.5} />
+</button>
             {/* Mobile Menu */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -99,21 +101,49 @@ export default function Navigation() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] bg-white">
                 <div className="flex flex-col gap-6 mt-8">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="text-lg font-medium text-[#1A1A1A] tracking-[0.05em] hover:opacity-70 transition-opacity"
-                    >
-                      {link.name}
-                    </a>
-                  ))}
+{navLinks.map((link) => (
+  <a
+    key={link.name}
+    href={link.href}
+    onClick={(e) => {
+      e.preventDefault();
+
+      const id = link.href.replace('#', '');
+      scrollTo(id);
+
+      setMobileMenuOpen(false);
+    }}
+    className="text-lg font-medium text-[#1A1A1A] tracking-[0.05em] hover:opacity-70 transition-opacity"
+  >
+    {link.name}
+  </a>
+))}
                 </div>
               </SheetContent>
             </Sheet>
           </div>
         </nav>
+
+      {searchOpen && (
+        <div className="absolute top-20 left-0 right-0 bg-white shadow-md p-4 z-50">
+<input
+  type="text"
+  placeholder="Search pianos..."
+  value={query}
+  onChange={(e) => setQuery(e.target.value)}
+onKeyDown={(e) => {
+  if (e.key === 'Enter') {
+    document.getElementById('shop')?.scrollIntoView({
+      behavior: 'smooth',
+    });
+    setSearchOpen(false);
+  }
+}}
+  className="w-full px-4 py-3 border border-gray-200 focus:outline-none"
+/>
+        </div>
+      )}
+
       </div>
     </motion.header>
   );

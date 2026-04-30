@@ -1,36 +1,36 @@
 import { motion } from 'framer-motion';
-import { Truck, Shield, Headphones, Leaf } from 'lucide-react';
+import { Gem, SearchCheck, Warehouse, Handshake } from 'lucide-react';
 
 const features = [
   {
-    icon: Truck,
-    title: 'Premium Quality, Without the Price Tag',
+    icon: Gem,
+    title: 'Upright & Grand Pianos — Without the Retail Markup',
     description:
-      'We focus on well-maintained, reputable piano brands, offering exceptional value compared to buying new.',
+      'We specialise in high-quality upright and grand pianos from trusted brands, priced far below new retail.',
   },
   {
-    icon: Shield,
-    title: 'Quality Guarantee',
+    icon: SearchCheck,
+    title: 'Fully Inspected & Play-Tested Pianos',
     description:
-      'Each piano is individually inspected — no mass-produced junk or risky online purchases.',
+      'Every piano is carefully inspected for tone, touch, and condition — so you’re not gambling on unknown quality or risky online listings.',
   },
   {
-    icon: Headphones,
-    title: 'Private Viewing Experience',
+    icon: Warehouse,
+    title: 'Try Before You Buy — Sydney Warehouse',
     description:
-      'Visit our Sydney warehouse to try before you buy. No pressure, just honest guidance.',
+      'Visit our Sydney location and experience each piano in person. No pressure, no sales tactics — just honest advice and time to choose what feels right.',
   },
   {
-    icon: Leaf,
-    title: 'Direct Communication',
+    icon: Handshake,
+    title: 'Deal Direct — No Middlemen, No Markups',
     description:
-      'Deal directly with a knowledgeable seller — no middlemen, no confusion.',
+      'You’re speaking directly with the seller, not a showroom or reseller. That means clearer answers, better prices, and a smoother buying experience.',
   },
 ];
 
 export default function WhyChooseUsV2() {
   return (
-    <section className="py-20 sm:py-28 lg:py-32 bg-white">
+    <section id="about" className="py-20 sm:py-28 lg:py-32 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
         <motion.div
@@ -41,7 +41,7 @@ export default function WhyChooseUsV2() {
           className="text-center mb-16 sm:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] tracking-tight">
-            Why Choose Us
+            Why Buy From Us
           </h2>
           <div className="w-16 h-[2px] bg-[#1A1A1A] mx-auto mt-6" />
         </motion.div>

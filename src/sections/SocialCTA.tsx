@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion';
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+};
+
 export default function SocialCTA() {
   return (
     <section className="relative h-[300px] sm:h-[400px] overflow-hidden">
@@ -26,8 +31,13 @@ export default function SocialCTA() {
           Follow @affordable-pianos
         </h2>
         
-        <a
-          href="#shop"
+<a
+  href="#shop"
+  onClick={(e) => {
+    e.preventDefault();
+    scrollTo('shop');
+  }}
+
           className="inline-block px-8 py-3 border border-white text-white text-sm font-medium tracking-wide hover:bg-white hover:text-[#1A1A1A] transition-colors duration-300"
         >
           Shop Deals
