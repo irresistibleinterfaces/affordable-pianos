@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Search, PenTool, Truck, Sparkles } from 'lucide-react';
+import { Search, MessageCircle, Truck, Eye } from 'lucide-react';
 
 const steps = [
   {
@@ -7,28 +7,28 @@ const steps = [
     icon: Search,
     title: 'Browse Available Pianos',
     description:
-      'Explore our curated collections and filter by room, style, or budget. Every product page includes detailed specs, materials, and lifestyle imagery to help you decide with confidence. View our current selection of upright and grand pianos online.',
+      'View our current selection of upright and grand pianos online.',
   },
   {
     number: '02',
-    icon: PenTool,
+    icon: MessageCircle,
     title: 'Enquire or Book a Viewing',
     description:
-      'Contact us to ask questions or arrange a time to visit our warehouse. No pressure, just expert guidance.',
+      'Contact us to ask questions or arrange a time to visit our warehouse.',
   },
   {
     number: '03',
-    icon: Truck,
+    icon: Eye,
     title: 'Inspect & Play',
     description:
       'Come in, test the piano, and make sure it feels right.',
   },
   {
     number: '04',
-    icon: Sparkles,
+    icon: Truck,
     title: 'Purchase with Confidence',
     description:
-      'Take home a piano you genuinely love. If you ever need care advice, repairs, or want to refresh your space, our lifetime support team is here for you — always.',
+      'Take home a piano you’ll love — ready to play from day one.',
   },
 ];
 

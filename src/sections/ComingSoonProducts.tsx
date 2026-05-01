@@ -32,7 +32,7 @@ const scrollTo = (id: string) => {
 
 export default function ComingSoonProducts() {
   return (
-    <section id="shop" className="py-20 sm:py-28 lg:py-32 bg-white">
+    <section className="py-20 sm:py-28 lg:py-32 bg-white">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Coming Soon Banner */}
         <motion.div

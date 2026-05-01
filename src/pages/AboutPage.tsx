@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import AboutUs from '@/sections/AboutUs';
 import HowItWorks from '@/sections/HowItWorks';
 import Testimonials from '@/sections/Testimonials';
-import Newsletter from '@/sections/Newsletter';
+import ContactForm from '@/sections/ContactForm';
 
 export default function AboutPage() {
   return (
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <AboutUs />
         <HowItWorks />
         <Testimonials />
-        <Newsletter />
+        <ContactForm />
       </main>
       <Footer />
     </div>

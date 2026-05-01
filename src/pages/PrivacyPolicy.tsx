@@ -1,7 +1,13 @@
 import PolicyLayout from './PolicyLayout';
+import { Helmet } from 'react-helmet-async';
 
 export default function PrivacyPolicy() {
   return (
+    <>
+    <Helmet>
+    <title>Privacy Policy | Affordable Pianos</title>
+    </Helmet>
+
     <PolicyLayout title="Privacy Policy">
       <p>
         We respect your privacy and are committed to protecting your personal information.
@@ -21,5 +27,6 @@ export default function PrivacyPolicy() {
         accordance with this policy.
       </p>
     </PolicyLayout>
+    </>
   );
 }

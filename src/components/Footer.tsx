@@ -1,175 +1,144 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 const linkColumns = [
   {
     title: 'Links',
     links: [
-      { name: 'Home', href: '#top' },
-      { name: 'Shop', href: '#shop' },
-      { name: 'About Us', href: '#about' },
-      { name: 'Blog', href: '#' },
-      { name: 'FAQ', href: '#' },
+      { name: 'Home', type: 'route', path: '/' },
+      { name: 'Shop', type: 'scroll', id: 'shop' },
+      { name: 'About Us', type: 'scroll', id: 'about' },
     ],
   },
   {
     title: 'Categories',
     links: [
-      { name: 'Grand Pianos', href: '#shop' },
-      { name: 'Upright Pianos', href: '#shop' },
-      { name: 'Digital', href: '#shop' },
-      { name: 'Keyboards', href: '#shop' },
-      { name: 'Accessories', href: '#shop' },
+      { name: 'Grand Pianos', type: 'scroll', id: 'shop' },
+      { name: 'Upright Pianos', type: 'scroll', id: 'shop' },
+      { name: 'Digital', type: 'scroll', id: 'shop' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { name: 'Shipping Information', href: '/#/shipping' },
-      { name: 'Return & Refund Policy', href: '/#/returns' },
-      { name: 'Privacy Policy', href: '/#/privacy-policy' },
-      { name: 'Terms & Conditions', href: '/#/terms' },
-      { name: 'Contact', href: '#contact' },
+      { name: 'Shipping Information', type: 'route', path: '/shipping' },
+      { name: 'Returns', type: 'route', path: '/returns' },
+      { name: 'Privacy Policy', type: 'route', path: '/privacy-policy' },
+      { name: 'Terms', type: 'route', path: '/terms' },
+      { name: 'Contact', type: 'scroll', id: 'contact' },
     ],
   },
 ];
 
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-};
-
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleClick = (link: any) => {
+    if (link.type === 'route') {
+      navigate(link.path);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // scroll links
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById(link.id)?.scrollIntoView({
+          behavior: 'smooth',
+        });
+      }, 100);
+    } else {
+      document.getElementById(link.id)?.scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
-    <footer id="contact" className="bg-[#1A1A1A] text-white py-16 sm:py-20">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        {/* Top Section */}
+    <footer className="bg-[#1A1A1A] text-white py-16 sm:py-20">
+      <div className="max-w-[1400px] mx-auto px-4">
+
+        {/* Top */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pb-12 border-b border-white/10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-12 border-b border-white/10"
         >
-          {/* Left - Brand */}
-<div>
-  <div className="mb-4">
-    <img
-      src="/images/logo-white.png"
-      alt="Affordable Pianos"
-      className="h-28 sm:h-30 w-auto"
-    />
-  </div>
+          <div>
+            <Link to="/">
+              <img
+                src="/images/logo-white.png"
+                alt="Affordable Pianos"
+                className="h-24 mb-4"
+              />
+            </Link>
+            <p className="text-[#999] max-w-md">
+              Quality second-hand pianos in Sydney. Book a private viewing today.
+            </p>
+          </div>
 
-  <p className="text-[#999999] text-sm sm:text-base leading-relaxed max-w-md">
-    Quality second-hand pianos in Sydney. Book a private viewing today.
-  </p>
-</div>
+          <div className="lg:text-right space-y-3">
+            <a href="mailto:affordablepianos@purelymail.com" className="flex lg:justify-end gap-2 text-[#999] hover:text-white">
+              <Mail className="w-4 h-4" />
+              affordablepianos@purelymail.com
+            </a>
 
-          {/* Right - Contact */}
-          <div className="lg:text-right">
-            <div className="space-y-3">
-              <a
-                href="mailto:affordablepianos@purelymail.com"
-                className="flex items-center lg:justify-end gap-2 text-[#999999] hover:text-white transition-colors duration-200"
-              >
-                <Mail className="w-4 h-4" />
-                <span>affordablepianos@purelymail.com</span>
-              </a>
-              <a
-                href="tel:+61484128805"
-                className="flex items-center lg:justify-end gap-2 text-[#999999] hover:text-white transition-colors duration-200"
-              >
-                <Phone className="w-4 h-4" />
-                <span>(+61) 484 128 805</span>
-              </a>
-              <div className="flex items-center lg:justify-end gap-2 text-[#999999]">
-                <MapPin className="w-4 h-4" />
-                <span>Sydney, NSW, Australia</span>
-              </div>
+            <a href="tel:+61484128805" className="flex lg:justify-end gap-2 text-[#999] hover:text-white">
+              <Phone className="w-4 h-4" />
+              (+61) 484 128 805
+            </a>
+
+            <div className="flex lg:justify-end gap-2 text-[#999]">
+              <MapPin className="w-4 h-4" />
+              Sydney, Australia
             </div>
           </div>
         </motion.div>
 
-        {/* Middle Section - Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8 py-12 border-b border-white/10"
-        >
+        {/* Links */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 py-12 border-b border-white/10">
           {linkColumns.map((column) => (
             <div key={column.title}>
-              <h4 className="text-xs font-medium uppercase tracking-wider text-white mb-4">
-                {column.title}
-              </h4>
+              <h4 className="text-xs uppercase mb-4">{column.title}</h4>
+
               <ul className="space-y-2">
                 {column.links.map((link) => (
                   <li key={link.name}>
-<a
-  href={link.href}
-  onClick={(e) => {
-    if (link.href.startsWith('#')) {
-      e.preventDefault();
-      const id = link.href.replace('#', '');
-      scrollTo(id);
-    }
-  }}
-  className="text-[#999999] text-sm hover:text-white transition-colors duration-200"
->
-  {link.name}
-</a>
+                    <button
+                      onClick={() => handleClick(link)}
+                      className="text-[#999] text-sm hover:text-white transition"
+                    >
+                      {link.name}
+                    </button>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
-        >
-          <p className="text-[#999999] text-sm">
-            © 2026 Affordable Pianos. All rights reserved.
+        {/* Bottom */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8">
+          <p className="text-[#999] text-sm">
+            © 2026 Affordable Pianos
           </p>
 
-          {/* Social Icons */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#999999] hover:text-white transition-colors duration-200"
-              aria-label="Facebook"
-            >
+          <div className="flex gap-4">
+            <a href="#" className="text-[#999] hover:text-white">
               <Facebook className="w-5 h-5" />
             </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#999999] hover:text-white transition-colors duration-200"
-              aria-label="Instagram"
-            >
+            <a href="#" className="text-[#999] hover:text-white">
               <Instagram className="w-5 h-5" />
             </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#999999] hover:text-white transition-colors duration-200"
-              aria-label="Twitter"
-            >
+            <a href="#" className="text-[#999] hover:text-white">
               <Twitter className="w-5 h-5" />
             </a>
           </div>
-        </motion.div>
+        </div>
+
       </div>
     </footer>
   );
