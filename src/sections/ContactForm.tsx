@@ -30,7 +30,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
     if (res.ok) {
       toast.success('Message sent successfully!');
-
+      setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
     } else {
       toast.error('Something went wrong 😬');

@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion';
 import { heroBackground, heroTitle, fadeInUp, staggerContainerSlow, drawLine } from '@/lib/animations';
 
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-};
-
 export default function Hero() {
   return (
     <section id="top" className="relative h-screen w-full overflow-hidden">
