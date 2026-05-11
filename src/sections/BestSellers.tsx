@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import ProductCard from '@/components/ProductCard';
-import { pianos } from '@/data/pianos';
+import { pianos, type Piano } from '@/data/pianos';
 
 export default function BestSellers() {
   return (
@@ -21,7 +21,7 @@ export default function BestSellers() {
 
         {/* Products Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-{pianos.map((piano, index) => (
+{pianos.map((piano: Piano, index: number) => (
   <ProductCard
     key={piano.slug}
     name={piano.name}

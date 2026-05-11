@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.affordablepianos.com.au/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Product Pages -->
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/alex-steinbach-upright-piano</loc>
+    <lastmod>2026-05-04</lastmod>
+    <image:image
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/alex-steinbach-upright-piano-mahogany-front.webp</image:loc>
+    </image:image>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Policies -->
+  <url>
+    <loc>https://www.affordablepianos.com.au/privacy-policy</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.affordablepianos.com.au/terms</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.affordablepianos.com.au/shipping</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.affordablepianos.com.au/returns</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

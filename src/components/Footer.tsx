@@ -7,7 +7,7 @@ const linkColumns = [
     title: 'Links',
     links: [
       { name: 'Home', type: 'route', path: '/' },
-      { name: 'Shop', type: 'scroll', id: 'shop' },
+      { name: 'Shop', type: 'route', path: '/pianos' },
       { name: 'About Us', type: 'scroll', id: 'about' },
     ],
   },
@@ -70,8 +70,8 @@ export default function Footer() {
           <div>
             <Link to="/">
               <img
-                src="/images/logo-white.png"
-                alt="Affordable Pianos"
+                src="/images/affordable-pianos-sydney-white-logo.webp"
+                alt="Affordable Pianos Sydney white logo with grand piano icon"
                 className="h-24 mb-4"
               />
             </Link>

@@ -4,18 +4,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Truck, Shield, RefreshCw, ChevronRight } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { pianos } from '@/data/pianos';
 import { Helmet } from 'react-helmet-async';
+import { pianos, type Piano } from '@/data/pianos';
 
 const trustItems = [
-  { icon: Truck, title: 'Delivery Available', desc: 'Contact for quote' },
+  { icon: Truck, title: 'Free Delivery', desc: 'Contact for details' },
   { icon: Shield, title: 'Fully Inspected', desc: 'Excellent condition' },
   { icon: RefreshCw, title: 'Test Before Purchase', desc: 'Viewings welcome' },
 ];
 
 export default function ProductDetail() {
   const { slug } = useParams();
-  const piano = pianos.find(p => p.slug === slug);
+  const piano = pianos.find((p: Piano) => p.slug === slug);
 
   const [selectedImage, setSelectedImage] = useState(0);
 
@@ -30,7 +30,7 @@ export default function ProductDetail() {
   return (
     <div className="min-h-screen bg-white">
 <Helmet>
-  <title>{piano.name} | Affordable Pianos Australia</title>
+  <title>{piano.name} | Affordable Pianos Sydney</title>
 
   <meta
     name="description"
@@ -53,7 +53,7 @@ export default function ProductDetail() {
           <div className="max-w-[1400px] mx-auto px-4 py-4 text-sm text-[#999] flex items-center gap-2">
             <Link to="/" className="hover:text-black">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link to="/" className="hover:text-black">Pianos</Link>
+            <Link to="/pianos" className="hover:text-black">Pianos</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-black">{piano.name}</span>
           </div>
@@ -77,7 +77,7 @@ export default function ProductDetail() {
               </div>
 
               <div className="flex gap-2">
-                {piano.images.map((img, i) => (
+                {piano.images.map((img: string, i: number) => (
                   <button key={i} onClick={() => setSelectedImage(i)}>
                     <img src={img} className="w-20 h-20 object-cover" />
                   </button>
@@ -150,9 +150,9 @@ export default function ProductDetail() {
               Full Description
             </h2>
             <div className="space-y-4 text-[#666]">
-              {(piano.fullDescription || piano.description)
+              {(piano.fullDescription ?? piano.description)
                 .split('\n\n')
-                .map((para, i) => (
+                .map((para: string, i: number) => (
                   <p key={i}>{para}</p>
                 ))}
             </div>

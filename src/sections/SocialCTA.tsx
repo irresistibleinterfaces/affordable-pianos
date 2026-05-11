@@ -11,8 +11,8 @@ export default function SocialCTA() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/social-bg.png"
-          alt="Furniture showroom"
+          src="/images/luxury-white-grand-piano-showroom-sydney.webp"
+          alt="Luxury white grand piano displayed in a modern Sydney piano showroom"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay */}

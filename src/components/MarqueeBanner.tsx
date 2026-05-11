@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 const marqueeItems = [
   'NEW ARRIVALS JUST DROPPED',
-  'ENJOY EXCLUSIVE DEALS AND DISCOUNTS.',
+  'ENJOY MASSIVE DISCOUNTS',
   'LIMITED STOCK AVAILABLE',
-  'UP TO 50% OFF THIS WEEK',
+  'UP TO 75% OFF THIS WEEK',
 ];
 
 export default function MarqueeBanner() {

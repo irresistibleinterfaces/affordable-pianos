@@ -30,6 +30,8 @@ export default function Hero() {
           animate="visible"
         >
           <motion.h1
+            initial="visible"
+            animate="visible"
             variants={heroTitle}
             className="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[180px] font-extrabold text-white tracking-[-0.02em] leading-[0.9] text-center"
           >

@@ -6,7 +6,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const navLinks = [
   { name: 'HOME', type: 'route', path: '/' },
-  { name: 'SHOP', type: 'scroll', id: 'shop' },
+  { name: 'SHOP', type: 'route', path: '/pianos' },
   { name: 'ABOUT', type: 'scroll', id: 'about' },
   { name: 'CONTACT', type: 'scroll', id: 'contact' },
 ];
@@ -73,12 +73,19 @@ const handleNavClick = (link: any) => {
         <nav className="flex items-center justify-between h-20">
 
           {/* LOGO */}
-          <Link to="/" className="flex items-center">
+          <Link to="/">
+<picture>
+    {/* Mobile Image */}
+    <source
+      media="(max-width: 768px)"
+      srcSet="/images/affordable-pianos-sydney-logo-large.webp"
+    />
             <img
-              src="/images/logo-large.png"
-              alt="Affordable Pianos"
+              src="/images/affordable-pianos-sydney-logo-large.webp"
+              alt="Affordable Pianos Sydney logo with grand piano icon"
               className="h-16 w-auto"
             />
+</picture>
           </Link>
 
           {/* DESKTOP NAV */}
@@ -88,8 +95,8 @@ const handleNavClick = (link: any) => {
                 key={link.name}
                 onClick={() => handleNavClick(link)}
                 className={`text-sm font-medium tracking-[0.05em] transition hover:opacity-70 ${
-                  scrolled ? 'text-[#1A1A1A]' : 'text-white'
-                }`}
+                  scrolled ? 'text-[#1A1A1A]' : 'text-white'}
+                `}
               >
                 {link.name}
               </button>
@@ -110,13 +117,13 @@ const handleNavClick = (link: any) => {
             {/* MOBILE MENU */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <button className="md:hidden">
-                  <Menu className="w-6 h-6" />
+                <button className="md:hidden {`${scrolled ? 'text-black' : 'text-white'}`}">
+                  <Menu className={`${scrolled ? 'text-black' : 'text-white'}`} />
                 </button>
               </SheetTrigger>
 
               <SheetContent side="right" className="w-[300px]">
-                <div className="flex flex-col gap-6 mt-8">
+                <div className="flex flex-col gap-6 mt-8 p-10">
                   {navLinks.map((link) => (
                     <button
                       key={link.name}
