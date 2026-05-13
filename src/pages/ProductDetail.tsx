@@ -34,15 +34,25 @@ export default function ProductDetail() {
 
   <meta
     name="description"
-    content={`${piano.name} in excellent condition. Polished finish, great tone, and affordable price. Available now in Australia.`}
+    content={piano.description}
   />
 
   <meta name="keywords" content="upright piano, affordable piano Australia, used piano, Alex Steinbach piano" />
 
-  {/* Open Graph (for social sharing) */}
-  <meta property="og:title" content={piano.name} />
+  <link
+    rel="canonical"
+    href={`https://www.affordablepianos.com.au/pianos/${piano.slug}`}
+  />
+
+  {/* Open Graph */}
+  <meta property="og:title" content={`${piano.name} | Affordable Pianos Sydney`} />
   <meta property="og:description" content={piano.description.slice(0, 120)} />
-  <meta property="og:image" content={piano.images[0]} />
+  <meta property="og:image" content={piano.image} />
+
+  <meta
+    property="og:type"
+    content="product"
+  />
 </Helmet>
       <Navigation />
 

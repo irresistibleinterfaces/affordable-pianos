@@ -81,14 +81,14 @@ export default function Footer() {
           </div>
 
           <div className="lg:text-right space-y-3">
-            <a href="mailto:affordablepianos@purelymail.com" className="flex lg:justify-end gap-2 text-[#999] hover:text-white">
+            <a href="mailto:info@affordablepianos.com.au" className="flex lg:justify-end gap-2 text-[#999] hover:text-white">
               <Mail className="w-4 h-4" />
-              affordablepianos@purelymail.com
+              info@affordablepianos.com.au
             </a>
 
             <a href="tel:+61484128805" className="flex lg:justify-end gap-2 text-[#999] hover:text-white">
               <Phone className="w-4 h-4" />
-              (+61) 484 128 805
+              0484 128 805
             </a>
 
             <div className="flex lg:justify-end gap-2 text-[#999]">
@@ -130,7 +130,7 @@ export default function Footer() {
             <a href="#" className="text-[#999] hover:text-white">
               <Facebook className="w-5 h-5" />
             </a>
-            <a href="#" className="text-[#999] hover:text-white">
+            <a href="https://www.instagram.com/affordablepianos/" className="text-[#999] hover:text-white">
               <Instagram className="w-5 h-5" />
             </a>
             <a href="#" className="text-[#999] hover:text-white">

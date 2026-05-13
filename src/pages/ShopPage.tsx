@@ -71,12 +71,76 @@ const filterButtons = [
 ];
 
 return ( <div className="min-h-screen bg-white"> 
-  <Helmet> 
-     <title>Affordable Pianos Sydney | Used & Upright Pianos for Sale</title> 
-     <meta
-       name="description"
-       content="Browse affordable upright and grand pianos in Sydney. Quality instruments, great prices, delivery available."
-     /> </Helmet>
+
+<Helmet>
+  {/* Primary SEO */}
+  <title>
+    Used & Restored Pianos for Sale Sydney | Upright & Grand Pianos
+  </title>
+
+  <meta
+    name="description"
+    content="Browse quality used and restored upright and grand pianos for sale in Sydney. Yamaha, Kawai, Steinbach and other trusted brands at affordable prices with free delivery across NSW."
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  {/* Canonical */}
+  <link
+    rel="canonical"
+    href="https://www.affordablepianos.com.au/pianos"
+  />
+
+  {/* Open Graph */}
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:title"
+    content="Used & Restored Pianos for Sale Sydney"
+  />
+
+  <meta
+    property="og:description"
+    content="Explore affordable upright and grand pianos including Yamaha, Kawai, and Steinbach models. Carefully selected used and restored pianos available across NSW."
+  />
+
+  <meta
+    property="og:url"
+    content="https://www.affordablepianos.com.au/pianos"
+  />
+
+  <meta
+    property="og:image"
+    content="https://www.affordablepianos.com.au/images/og-image.jpg"
+  />
+
+  {/* Twitter */}
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Used & Restored Pianos for Sale Sydney"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Browse quality used upright and grand pianos from trusted brands including Yamaha, Kawai, and Steinbach."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://www.affordablepianos.com.au/images/og-image.jpg"
+  />
+</Helmet>
 
 
   <Navigation />

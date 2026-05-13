@@ -2,15 +2,15 @@
   RewriteEngine On
   RewriteBase /
 
-  # Force HTTPS + WWW
-  RewriteCond %{HTTPS} !=on [OR]
-  RewriteCond %{HTTP_HOST} ^affordablepianos\.com\.au [NC]
+  # Force HTTPS and WWW
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\.affordablepianos\.com\.au$ [NC]
   RewriteRule ^(.*)$ https://www.affordablepianos.com.au/$1 [L,R=301]
 
   # Prevent direct access to index.html
   RewriteRule ^index\.html$ - [L]
 
-  # React/Vite SPA fallback routing
+  # React/Vite SPA fallback
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
