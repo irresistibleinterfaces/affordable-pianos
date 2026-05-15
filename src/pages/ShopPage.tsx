@@ -25,6 +25,15 @@ price: 2999,
 image: '/images/alex-steinbach-upright-piano-mahogany-front.webp',
 description: 'Polished mahogany finish',
 },
+{
+id: 2,
+name: 'Kawai KG-3C Grand Piano',
+slug: 'kawai-KG-3C-grand-piano',
+type: 'grand',
+price: 7999,
+image: '/images/kawai-KG-3C-grand-piano-side-angle-main.webp',
+description: 'Black finish',
+},
 ];
 
 type SortOption = 'featured' | 'price-low' | 'price-high';
@@ -80,7 +89,7 @@ return ( <div className="min-h-screen bg-white">
 
   <meta
     name="description"
-    content="Browse quality used and restored upright and grand pianos for sale in Sydney. Yamaha, Kawai, Steinbach and other trusted brands at affordable prices with free delivery across NSW."
+    content="Browse quality used and restored upright and grand pianos for sale in Sydney. Yamaha, Kawai, Steinbach and other trusted brands at affordable prices with free delivery across Sydney."
   />
 
   <meta

@@ -91,10 +91,10 @@ const handleSubmit = async (e: React.FormEvent) => {
                     Email
                   </span>
                   <a
-                    href="mailto:affordablepianos@purelymail.com"
+                    href="mailto:info@affordablepianos.com.au"
                     className="text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
                   >
-                    affordablepianos@purelymail.com
+                    info@affordablepianos.com.au
                   </a>
                 </div>
               </div>
@@ -111,7 +111,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     href="tel:+61484128805"
                     className="text-[#1A1A1A] font-medium hover:opacity-70 transition-opacity"
                   >
-                    (+61) 484 128 805
+                    0484 128 805
                   </a>
                 </div>
               </div>
