@@ -27,6 +27,26 @@ export default function ProductDetail() {
     );
   }
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": piano.name,
+  "description": piano.description,
+  "image": piano.image,
+  "brand": {
+    "@type": "Brand",
+    "name": piano.brand
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "AUD",
+    "price": piano.price.replace(/[^0-9.]/g, ""),
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/UsedCondition",
+    "url": `https://www.affordablepianos.com.au/pianos/${piano.slug}`
+  }
+};
+
   return (
     <div className="min-h-screen bg-white">
 <Helmet>
@@ -53,6 +73,11 @@ export default function ProductDetail() {
     property="og:type"
     content="product"
   />
+
+<script type="application/ld+json">
+  {JSON.stringify(schema)}
+</script>
+
 </Helmet>
       <Navigation />
 

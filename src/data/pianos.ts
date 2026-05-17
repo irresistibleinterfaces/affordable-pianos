@@ -1,6 +1,7 @@
 export type Piano = {
   slug: string;
   name: string;
+  brand: string;
   price: string;
   image: string;
   images: string[];
@@ -13,6 +14,7 @@ export const pianos: Piano[] = [
   {
     slug: "alex-steinbach-upright-piano",
     name: "Alex Steinbach Upright Piano",
+    brand: "Alex Steinbach",
     price: "$2,999",
     image:
       "https://www.affordablepianos.com.au/images/alex-steinbach-upright-piano-mahogany-front.webp",
@@ -31,6 +33,7 @@ export const pianos: Piano[] = [
   {
     slug: "kawai-KG-3C-grand-piano",
     name: "Kawai KG-3C Grand Piano",
+    brand: "Kawai",
     price: "$7,999",
     image:
       "https://www.affordablepianos.com.au/images/kawai-KG-3C-grand-piano-side-angle-main.webp",

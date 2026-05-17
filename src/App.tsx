@@ -23,6 +23,38 @@ import SocialCTA from '@/sections/SocialCTA';
 import ContactForm from '@/sections/ContactForm';
 
 function HomePage() {
+
+  const schema = {
+  "@context": "https://schema.org",
+  "@type": "MusicStore",
+  "name": "Affordable Pianos",
+  "image": "https://www.affordablepianos.com.au/images/affordable-pianos-sydney-logo-large.webp",
+  "url": "https://www.affordablepianos.com.au",
+  "description":
+    "Used and restored grand and upright pianos for sale with free delivery across Sydney.",
+  "knowsAbout": [
+    "Grand Pianos",
+    "Upright Pianos",
+    "Used Pianos",
+    "Refurbished Pianos",
+    "Kawai Pianos",
+    "Second Hand Pianos"
+  ],
+  "areaServed": "Sydney",
+  "telephone": "+61484128805",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sydney",
+    "addressRegion": "NSW",
+    "addressCountry": "AU"
+  },
+  "sameAs": [
+    "https://www.facebook.com/people/Affordable-Pianos/61589474743823/",
+    "https://www.instagram.com/affordablepianos/",
+    "https://x.com/affordablepiano/"
+  ]
+  }
+
   return (
     <>
       <Helmet>
@@ -93,6 +125,11 @@ function HomePage() {
           name="twitter:image"
           content="https://www.affordablepianos.com.au/images/og-image.jpg"
         />
+
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+
       </Helmet>
       <Navigation />
       <main>
