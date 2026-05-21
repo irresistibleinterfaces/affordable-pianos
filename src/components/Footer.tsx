@@ -8,7 +8,8 @@ const linkColumns = [
     links: [
       { name: 'Home', type: 'route', path: '/' },
       { name: 'Shop', type: 'route', path: '/pianos' },
-      { name: 'About Us', type: 'scroll', id: 'about' },
+      { name: 'About', type: 'scroll', id: 'about' },
+      { name: 'Blog', type: 'route', path: '/blog' },
     ],
   },
   {

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 // Piano data
 interface Piano {
@@ -155,16 +156,40 @@ return ( <div className="min-h-screen bg-white">
   <Navigation />
 
   {/* Hero */}
-  <section className="pt-32 pb-12 bg-[#F5F5F5]">
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-      <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] mb-4">
+<section className="relative pt-32 pb-20 overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="/images/journal-header.webp"
+      alt="Luxury piano showroom in Sydney"
+      className="w-full h-full object-cover object-center"
+    />
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black/45" />
+  </div>
+
+  {/* Content */}
+  <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <span className="text-white/70 text-xs uppercase tracking-[0.2em] font-medium">
+        Sydney Piano Collection
+      </span>
+
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight mt-4 leading-[1.05]">
         Affordable Pianos in Sydney
       </h1>
-      <p className="text-[#666666] text-base sm:text-lg max-w-2xl">
-        Browse our collection of second-hand upright, grand and digital pianos. Carefully selected for tone, condition and value.
+
+      <p className="text-white/80 text-base sm:text-lg mt-5 max-w-2xl leading-relaxed">
+        Browse our collection of upright, grand, and digital pianos.
       </p>
-    </div>
-  </section>
+    </motion.div>
+  </div>
+</section>
 
   {/* Filters */}
   <section className="sticky top-20 z-30 bg-white border-b border-[#E5E5E5]">

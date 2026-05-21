@@ -6,6 +6,8 @@ import Navigation from '@/components/Navigation';
 import MarqueeBanner from '@/components/MarqueeBanner';
 import Footer from '@/components/Footer';
 import AboutPage from '@/pages/AboutPage';
+import BlogPage from '@/pages/BlogPage';
+import BlogPostPage from '@/pages/BlogPostPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 import Returns from './pages/Returns';
@@ -19,6 +21,7 @@ import ModernLiving from '@/sections/ModernLiving';
 import BestSellers from '@/sections/BestSellers';
 import WhyChooseUsV2 from '@/sections/WhyChooseUsV2';
 import Testimonials from '@/sections/Testimonials';
+import BlogSection from '@/sections/BlogSection';
 import SocialCTA from '@/sections/SocialCTA';
 import ContactForm from '@/sections/ContactForm';
 
@@ -139,6 +142,7 @@ function HomePage() {
         <ModernLiving />
         <WhyChooseUsV2 />
         <Testimonials />
+        <BlogSection />
         <SocialCTA />
         <ContactForm />
       </main>
@@ -155,6 +159,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/returns" element={<Returns />} />

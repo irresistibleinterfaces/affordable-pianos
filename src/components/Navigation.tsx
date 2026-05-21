@@ -8,6 +8,7 @@ const navLinks = [
   { name: 'HOME', type: 'route', path: '/' },
   { name: 'SHOP', type: 'route', path: '/pianos' },
   { name: 'ABOUT', type: 'scroll', id: 'about' },
+  { name: 'BLOG', type: 'route', path: '/blog' },
   { name: 'CONTACT', type: 'scroll', id: 'contact' },
 ];
 

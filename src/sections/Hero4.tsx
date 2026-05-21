@@ -37,7 +37,7 @@ export default function Hero() {
   <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.06),transparent_40%)] z-10" />
 
   {/* Content */}
-  <div className="relative z-20 flex h-full items-center">
+<div className="relative z-20 flex h-full items-start md:items-center pt-32 md:pt-0">
     <div className="container mx-auto px-6 lg:px-12">
       <div className="max-w-2xl">
 
@@ -52,13 +52,9 @@ export default function Hero() {
             {/* Massive Bold Headline focused explicitly on Value vs New */}
             <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-[68px] leading-[1.05] lg:tracking-[-0.03em]">
               Affordable Pianos<br />
-              <span className="text-stone-800 font-normal">Beautifully restored pianos for modern Sydney homes.</span>
+              <span className="text-stone-800 font-normal">Saving you thousands on your next piano.</span>
             </h1>
 
-            {/* Razor-focused, sales-optimized Subheading */}
-            <p className="mt-6 max-w-lg text-lg sm:text-xl font-medium leading-relaxed text-white">
-              Discover a curated range of pre-loved and restored upright, grand, and digital pianos and save thousands. Premium quality - without the premium price tag.
-            </p>
 
             {/* High-Converting CTA Button Assembly */}
             <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
