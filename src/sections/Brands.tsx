@@ -2,11 +2,8 @@ import { motion } from 'framer-motion';
 
 const brands = [
   { name: 'Yamaha', tagline: 'Japanese Craftsmanship Since 1887' },
-  { name: 'Steinway & Sons', tagline: 'The Piano of the Immortals' },
-  { name: 'Bösendorfer', tagline: 'Viennese Tradition Since 1828' },
-  { name: 'Fazioli', tagline: 'Uncompromising Excellence' },
+  { name: 'Alex Steinbach', tagline: 'Where Great Music Begins' },
   { name: 'Kawai', tagline: 'The Future of the Piano' },
-  { name: 'Roland', tagline: 'Premium Digital Instruments' },
 ];
 
 export default function Brands() {
@@ -28,12 +25,12 @@ export default function Brands() {
             Brands We Stock
           </h2>
           <p className="text-[#666666] text-base sm:text-lg mt-4 max-w-xl mx-auto">
-            We are an authorised dealer for the world&apos;s most respected furniture and piano manufacturers.
+            We are an authorised dealer for the world&apos;s most respected piano manufacturers.
           </p>
         </motion.div>
 
         {/* Brands Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-[#E5E5E5]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-px bg-[#E5E5E5]">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}

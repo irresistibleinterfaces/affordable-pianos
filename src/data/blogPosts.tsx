@@ -34,7 +34,7 @@ export const blogPosts: BlogPost[] = [
     date: 'May 19, 2026',
     readTime: '6 min read',
     author: 'Affordable Pianos Editorial Team',
-    image: '/images/sydney-piano-movers-loading-upright-piano.webp',
+    image: '/images/sydney-piano-movers-moving-grand-piano.webp',
     slug: 'how-much-does-it-cost-to-move-a-piano-in-sydney',
     content: [
       {

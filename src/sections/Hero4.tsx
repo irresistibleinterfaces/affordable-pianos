@@ -1,87 +1,208 @@
+import { useEffect } from "react";
+import gsap from "gsap";
+import { SplitText } from "gsap/SplitText";
+import { CustomEase } from "gsap/all";
+import "./Hero.css";
+import Hero5 from '@/sections/Hero5';
 
-const scrollTo = (id: string) => {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
-};
+gsap.registerPlugin(CustomEase, SplitText);
 
 export default function Hero() {
+  useEffect(() => {
+    CustomEase.create("hop", "0.8, 0, 0.2, 1");
+    CustomEase.create("hop2", "0.9, 0, 0.1, 1");
+
+    const ctx = gsap.context(() => {
+ const splitText = (
+  selector: string,
+  type: "chars" | "words" | "lines",
+  className: string,
+  mask = true
+) => {
+  return SplitText.create(selector, {
+    type,
+    [`${type}Class`]: className,
+    ...(mask && { mask: type }),
+  });
+};
+
+      splitText(".preloader-header h1", "chars", "char");
+      splitText(".header h1", "chars", "char", false);
+
+      const rotations = [7.5, -2.5, -10, 12.5, -5, 5];
+
+      gsap.set(".preloader-img", {
+        rotate: (i) => rotations[i],
+      });
+
+      const tl = gsap.timeline({
+        delay: 0.5,
+      });
+
+      tl.to(".preloader-img", {
+        scale: 1,
+        clipPath: "polygon(0% 0%,100% 0%,100% 100%,0% 100%)",
+        duration: 1,
+        ease: "hop",
+        stagger: 0.2,
+      });
+
+      tl.to(
+        ".preloader-header h1 .char",
+        {
+          y: "0%",
+          duration: 1,
+          ease: "hop2",
+          stagger: {
+            each: 0.125,
+            from: "random",
+          },
+        },
+        "0.35"
+      );
+
+      tl.to(
+        ".preloader-counter p",
+        {
+          y: "0%",
+          duration: 1,
+          ease: "hop2",
+          onStart: () => {
+            const counterEl = document.querySelector(
+              ".preloader-counter p"
+            ) as HTMLElement;
+
+            const counter = { value: 0 };
+
+            gsap.to(counter, {
+              value: 100,
+              duration: 2,
+              delay: 0.5,
+              ease: "power2.inOut",
+              onUpdate: () => {
+                if (counterEl) {
+                  counterEl.textContent = String(
+                    Math.round(counter.value)
+                  ).padStart(3, "0");
+                }
+              },
+            });
+          },
+        },
+        "<"
+      );
+
+      tl.to(
+        ".preloader-counter p",
+        {
+          y: "-100%",
+          duration: 0.75,
+          ease: "hop2",
+        },
+        3.25
+      );
+
+      tl.to(
+        ".preloader-header h1 .char",
+        {
+          y: "-100%",
+          duration: 0.75,
+          ease: "hop2",
+          stagger: {
+            each: 0.125,
+            from: "random",
+          },
+        },
+        3.25
+      );
+
+      tl.to(
+        ".preloader-images .preloader-img",
+        {
+          scale: 0,
+          clipPath: "polygon(20% 20%,80% 20%,80% 80%,20% 80%)",
+          duration: 1,
+          ease: "hop2",
+          stagger: -0.075,
+        },
+        3.5
+      );
+
+      tl.to(
+        ".preloader",
+        {
+          clipPath: "polygon(0% 0%,100% 0%,100% 0%,0% 0%)",
+          duration: 1,
+          ease: "hop2",
+        },
+        4.35
+      );
+
+      tl.to(
+        ".header h1 .char",
+        {
+          y: "0%",
+          duration: 1,
+          ease: "hop",
+          stagger: {
+            each: 0.075,
+            from: "random",
+          },
+        },
+        4.65
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   return (
+    <>
+      <div className="preloader">
+        <div className="preloader-images">
+          <div className="preloader-img">
+            <img src="/images/luxury-grand-piano-showroom-sydney.webp" alt="" />
+          </div>
 
-<section id="top" className="relative h-screen w-full overflow-hidden">
-  {/* Background Image */}
-  <picture>
-    {/* Mobile Image */}
-    <source
-      media="(max-width: 768px)"
-      srcSet="/images/premium-black-grand-piano-showroom-sydney.webp"
-    />
+          <div className="preloader-img">
+            <img src="/images/premium-black-grand-piano-showroom-sydney.webp" alt="" />
+          </div>
 
-    {/* Desktop Image */}
-    <img
-      src="/images/luxury-grand-piano-homepage-banner-sydney.webp"
-      alt="Luxury black grand piano in elegant modern showroom in Sydney"
-      className="absolute inset-0 h-full w-full object-cover"
-      loading="eager"
-      fetchPriority="high"
-    />
-  </picture>
+          <div className="preloader-img">
+            <img src="/images/premium-black-grand-piano-showroom-sydney.webp" alt="" />
+          </div>
 
-  {/* Dark Top Overlay For Nav */}
-  <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/55 to-transparent z-10" />
+          <div className="preloader-img">
+            <img src="/images/luxury-white-grand-piano-showroom-sydney.webp" alt="" />
+          </div>
 
-  {/* Left Side Readability Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent z-10" />
+          <div className="preloader-img">
+            <img src="/images/grand-vs-upright-piano-buying-guide.webp" alt="" />
+          </div>
 
-  {/* Optional Soft Luxury Glow */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,255,255,0.06),transparent_40%)] z-10" />
+          <div className="preloader-img">
+            <img src="/images/premium-black-grand-piano-showroom-sydney.webp" alt="" />
+          </div>
+        </div>
 
-  {/* Content */}
-<div className="relative z-20 flex h-full items-start md:items-center pt-32 md:pt-0">
-    <div className="container mx-auto px-6 lg:px-12">
-      <div className="max-w-2xl">
+        <div className="preloader-header">
+          <h1>Affordable Pianos</h1>
 
-        {/* Left Side: Uncompromising, Ultra-Clean Visual Hierarchy */}
-          <div className="flex flex-col justify-center">
-            
-            {/* Geolocation & Intent Tag */}
-            <div className="hidden md:inline-flex items-center gap-2 self-start rounded bg-stone-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-widest text-stone-900 mb-6">
-              Sydney Warehouse • clearance sale 
-            </div>
-            
-            {/* Massive Bold Headline focused explicitly on Value vs New */}
-            <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-[68px] leading-[1.05] lg:tracking-[-0.03em]">
-              Affordable Pianos<br />
-              <span className="text-stone-800 font-normal">Saving you thousands on your next piano.</span>
-            </h1>
-
-
-            {/* High-Converting CTA Button Assembly */}
-            <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                  onClick={(e) => {
-    e.preventDefault();
-    scrollTo('about');
-  }}
-                className="inline-block px-10 py-5 border border-white text-white text-sm font-bold tracking-widest hover:bg-white hover:text-[#1A1A1A] transition-colors duration-300"
-              >
-                LEARN MORE
-              </button>
-              <button
-                  onClick={(e) => {
-    e.preventDefault();
-    scrollTo('shop');
-  }}
-                className="bg-stone-900 px-10 py-5 text-sm font-bold uppercase tracking-widest text-white shadow-md transition-all hover:bg-stone-800 hover:scale-[1.02] active:scale-[0.98] text-center cursor-pointer"
-              >
-                Browse Pianos
-              </button>
-            </div>
+          <div className="preloader-counter">
+            <p>000</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
+      <section className="hero">
+      <div className="header">
+
+        <Hero5 />
+      </div>
+
+      </section>
+
+
+    </>
   );
 }

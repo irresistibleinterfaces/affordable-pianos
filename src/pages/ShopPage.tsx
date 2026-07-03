@@ -19,8 +19,8 @@ description: string;
 const pianos: Piano[] = [
 {
 id: 1,
-name: 'Alex Steinbach Upright Piano',
-slug: 'alex-steinbach-upright-piano',
+name: 'Alex Steinbach JS-115D Upright Piano',
+slug: 'alex-steinbach-JS-115D-upright-piano',
 type: 'upright',
 price: 2999,
 image: '/images/alex-steinbach-upright-piano-mahogany-front.webp',
@@ -35,6 +35,42 @@ price: 7999,
 image: '/images/kawai-KG-3C-grand-piano-side-angle-main.webp',
 description: 'Black finish',
 },
+{
+id: 3,
+name: 'Yamaha P2 Upright Piano',
+slug: 'yamaha-P2-upright-piano',
+type: 'upright',
+price: 9999,
+image: '/images/yamaha-P2-upright-piano-sydney-front.webp',
+description: 'Polished Walnut Finish',
+},
+{
+id: 4,
+name: 'Kawai CE-7N Upright Piano',
+slug: 'kawai-CE-7N-upright-piano',
+type: 'upright',
+price: 9999,
+image: '/images/kawai-CE-7N-upright-piano-front.webp',
+description: 'Polished Mahogany Finish',
+},
+{
+id: 5,
+name: 'Yamaha M5J Upright Piano',
+slug: 'yamaha-M5J-upright-piano',
+type: 'upright',
+price: 9999,
+image: '/images/yamaha-M5J-upright-piano-front.webp',
+description: 'Polished Ebony',
+},
+{
+id: 6,
+name: 'Kawai CS-40 Upright Piano',
+slug: 'kawai-CS-40-upright-piano',
+type: 'upright',
+price: 9999,
+image: '/images/kawai-CS-40-upright-piano-front.webp',
+description: 'Polished Ebony',
+}
 ];
 
 type SortOption = 'featured' | 'price-low' | 'price-high';

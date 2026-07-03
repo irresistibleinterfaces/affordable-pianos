@@ -16,12 +16,14 @@ import ProductDetail from '@/pages/ProductDetail';
 import ShopPage from '@/pages/ShopPage';
 import ScrollToTop from '@/components/ScrollToTop';
 
+
 import Hero4 from '@/sections/Hero4';
 import ModernLiving from '@/sections/ModernLiving';
 import BestSellers from '@/sections/BestSellers';
 import WhyChooseUsV2 from '@/sections/WhyChooseUsV2';
 import Testimonials from '@/sections/Testimonials';
 import BlogSection from '@/sections/BlogSection';
+import Brands from '@/sections/Brands';
 import SocialCTA from '@/sections/SocialCTA';
 import ContactForm from '@/sections/ContactForm';
 
@@ -141,6 +143,7 @@ function HomePage() {
         <BestSellers />
         <ModernLiving />
         <WhyChooseUsV2 />
+        <Brands />
         <Testimonials />
         <BlogSection />
         <SocialCTA />

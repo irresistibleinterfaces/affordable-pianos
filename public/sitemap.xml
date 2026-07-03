@@ -1,61 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- Homepage -->
   <url>
     <loc>https://www.affordablepianos.com.au/</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
-  <!-- Main Pages -->
   <url>
     <loc>https://www.affordablepianos.com.au/pianos</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
-  <!-- Product Pages -->
   <url>
-    <loc>https://www.affordablepianos.com.au/pianos/alex-steinbach-upright-piano</loc>
-    <lastmod>2026-05-04</lastmod>
-    <image:image
-      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-      <image:loc>https://www.affordablepianos.com.au/images/alex-steinbach-upright-piano-mahogany-front.webp</image:loc>
-    </image:image>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://www.affordablepianos.com.au/about</loc>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
-  <!-- Policies -->
+  <url>
+    <loc>https://www.affordablepianos.com.au/blog</loc>
+    <lastmod>2026-07-03</lastmod>
+  </url>
   <url>
     <loc>https://www.affordablepianos.com.au/privacy-policy</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
   <url>
     <loc>https://www.affordablepianos.com.au/terms</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
   <url>
     <loc>https://www.affordablepianos.com.au/shipping</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
-
   <url>
     <loc>https://www.affordablepianos.com.au/returns</loc>
-    <lastmod>2026-05-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <lastmod>2026-07-03</lastmod>
   </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/alex-steinbach-JS-115D-upright-piano</loc>
+    <lastmod>2026-07-03</lastmod>
 
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/alex-steinbach-upright-piano-mahogany-front.webp</image:loc>
+    </image:image>
+
+  </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/kawai-KG-3C-grand-piano</loc>
+    <lastmod>2026-07-03</lastmod>
+
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/kawai-KG-3C-grand-piano-side-angle-main.webp</image:loc>
+    </image:image>
+
+  </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/kawai-CS-40-upright-piano</loc>
+    <lastmod>2026-07-03</lastmod>
+
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/kawai-CS-40-upright-piano-front.webp</image:loc>
+    </image:image>
+
+  </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/yamaha-P2-upright-piano</loc>
+    <lastmod>2026-07-03</lastmod>
+
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/yamaha-P2-upright-piano-sydney-front.webp</image:loc>
+    </image:image>
+
+  </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/kawai-CE-7N-upright-piano</loc>
+    <lastmod>2026-07-03</lastmod>
+
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/kawai-CE-7N-upright-piano-front.webp</image:loc>
+    </image:image>
+
+  </url>
+  <url>
+    <loc>https://www.affordablepianos.com.au/pianos/yamaha-M5J-upright-piano</loc>
+    <lastmod>2026-07-03</lastmod>
+
+    <image:image xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+      <image:loc>https://www.affordablepianos.com.au/images/yamaha-M5J-upright-piano-front.webp</image:loc>
+    </image:image>
+
+  </url>
 </urlset>

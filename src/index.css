@@ -113,3 +113,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes scrollPulse {
+  0% { top: -16px; }
+  50% { top: 32px; }
+  100% { top: -16px; }
+}

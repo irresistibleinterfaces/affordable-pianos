@@ -17,7 +17,11 @@ export default function ProductDetail() {
   const { slug } = useParams();
   const piano = pianos.find((p: Piano) => p.slug === slug);
 
-  const [selectedImage, setSelectedImage] = useState(0);
+const [selectedImage, setSelectedImage] = useState(0);
+
+const [activeTab, setActiveTab] = useState<
+  'description' | 'specs' | 'delivery'
+>('description');
 
   if (!piano) {
     return (
@@ -26,6 +30,22 @@ export default function ProductDetail() {
       </div>
     );
   }
+
+const specs = piano.specs ?? {};
+
+const deliveryInfo =
+  piano.deliveryInfo ??
+  `
+
+Viewings are welcome by appointment.
+
+Delivery is available throughout Sydney and surrounding areas.
+
+Please contact us for interstate delivery options.
+
+All pianos are carefully inspected prior to sale.
+
+`;
 
 const schema = {
   "@context": "https://schema.org",
@@ -50,7 +70,10 @@ const schema = {
   return (
     <div className="min-h-screen bg-white">
 <Helmet>
-  <title>{piano.name} | Affordable Pianos Sydney</title>
+
+  <title>
+    {piano.name} for Sale in Sydney | Affordable Pianos
+  </title>
 
   <meta
     name="description"
@@ -178,21 +201,101 @@ const schema = {
           </div>
         </section>
 
-        {/* Description */}
-        <section className="py-12 border-t">
-          <div className="max-w-[800px] mx-auto px-4">
-            <h2 className="text-xl font-semibold mb-4">
-              Full Description
-            </h2>
-            <div className="space-y-4 text-[#666]">
-              {(piano.fullDescription ?? piano.description)
-                .split('\n\n')
-                .map((para: string, i: number) => (
-                  <p key={i}>{para}</p>
-                ))}
+{/* Product Information Tabs */}
+<section className="py-12 border-t">
+  <div className="max-w-[900px] mx-auto px-4">
+
+    {/* Tabs */}
+    <div className="flex gap-6 border-b mb-8 overflow-x-auto">
+
+      <button
+        onClick={() => setActiveTab('description')}
+        className={`pb-4 whitespace-nowrap transition-colors ${
+          activeTab === 'description'
+            ? 'border-b-2 border-black text-black'
+            : 'text-[#777]'
+        }`}
+      >
+        Description
+      </button>
+
+      <button
+        onClick={() => setActiveTab('specs')}
+        className={`pb-4 whitespace-nowrap transition-colors ${
+          activeTab === 'specs'
+            ? 'border-b-2 border-black text-black'
+            : 'text-[#777]'
+        }`}
+      >
+        Specifications
+      </button>
+
+      <button
+        onClick={() => setActiveTab('delivery')}
+        className={`pb-4 whitespace-nowrap transition-colors ${
+          activeTab === 'delivery'
+            ? 'border-b-2 border-black text-black'
+            : 'text-[#777]'
+        }`}
+      >
+        Delivery & Warranty
+      </button>
+
+    </div>
+
+    {/* Description Tab */}
+    {activeTab === 'description' && (
+      <div className="space-y-4 text-[#666]">
+        {(piano.fullDescription ?? piano.description)
+          .split('\n\n')
+          .map((para: string, i: number) => (
+            <p key={i}>{para}</p>
+          ))}
+      </div>
+    )}
+
+    {/* Specifications Tab */}
+    {activeTab === 'specs' && (
+      <div className="border rounded-lg overflow-hidden">
+
+        {Object.entries(specs).length > 0 ? (
+          Object.entries(specs).map(([key, value]) => (
+            <div
+              key={key}
+              className="flex justify-between px-4 py-3 border-b last:border-b-0"
+            >
+              <span className="font-medium capitalize">
+                {key.replace(/([A-Z])/g, ' $1')}
+              </span>
+
+              <span className="text-[#666]">
+                {String(value)}
+              </span>
             </div>
+          ))
+        ) : (
+          <div className="p-4 text-[#666]">
+            Specifications coming soon.
           </div>
-        </section>
+        )}
+
+      </div>
+    )}
+
+    {/* Delivery Tab */}
+    {activeTab === 'delivery' && (
+      <div className="space-y-4 text-[#666]">
+        {deliveryInfo
+          .trim()
+          .split('\n\n')
+          .map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+      </div>
+    )}
+
+  </div>
+</section>
 
         {/* Contact anchor target */}
         <div id="contact" />
